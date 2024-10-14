@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Quinque";
-    src: url("/fonts/QuinqueFive.woff2") format("woff2"),
-        url("/fonts/QuinqueFive.woff") format("woff");
+    src: url("fonts/QuinqueFive.woff2") format("woff2"),
+        url("fonts/QuinqueFive.woff") format("woff");
 }
 
 body {
