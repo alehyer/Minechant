@@ -5,7 +5,6 @@
         <meta charset="utf-8" />
         <script
             src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
             crossorigin="anonymous"
         ></script>
         <script src="data.js?10"></script>
@@ -23,7 +22,7 @@
                 <p>
                     <label for="language"></label>
                     <select id="language" class="selectLanguage">
-                        <option value=""></option>
+                        <option value="">Languages &#8595;</option>
                     </select>
                 </p>
             </div>
@@ -33,14 +32,18 @@
                 <p>
                     <label for="item"></label>
                     <select id="item" class="selectItem">
-                        <option value="">Choose an item to enchant</option>
+                        <option value="">
+                            Choose an item to enchant &#8595;
+                        </option>
                     </select>
                 </p>
 
-                <div id="enchants" style="display: none">
-                    <table></table>
+                <div id="enchants">
+                    <div class="tableContainer">
+                        <table></table>
+                    </div>
 
-                    <div id="overrides" style="">
+                    <div id="overrides">
                         <div>
                             <label>
                                 <input
@@ -49,7 +52,7 @@
                                     onchange="allowIncompatibleChanged()"
                                 />
                                 <span id="override-incompatible"
-                                    >Allow incompatible enchantments</span
+                                    >Allow incompatible</span
                                 >
                             </label>
                         </div>
@@ -61,7 +64,7 @@
                                     onchange="allowManyChanged()"
                                 />
                                 <span id="override-max-number"
-                                    >Allow more than 10 enchantments</span
+                                    >Allow 10+ enchantments</span
                                 >
                             </label>
                         </div>
@@ -74,7 +77,8 @@
 
             <div id="right">
                 <p id="mode_selection">
-                    <span id="optimize-label">Prioritize:-</span>
+                    <span id="optimize-label">Prioritize:</span>
+                    <br /><br />
                     <label>
                         <input
                             type="radio"
@@ -82,8 +86,9 @@
                             checked="checked"
                             value="levels"
                         />
-                        <span id="optimize-xp">XP</span>
+                        <span id="optimize-xp">XP Levels</span>
                     </label>
+                    <br /><br />
                     <label>
                         <input
                             type="radio"
@@ -102,7 +107,6 @@
                 <div id="solution" style="display: none">
                     <h2 id="solution-header">Optimal solution found!</h2>
 
-                    <p id="timings">Completed in under a second</p>
                     <p>
                         <b id="total-cost-label">Total cost:</b>
                         <span id="level-cost">####</span>

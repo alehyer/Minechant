@@ -4,11 +4,6 @@
         url("/fonts/QuinqueFive.woff") format("woff");
 }
 
-@font-face {
-    font-family: "Withered";
-    src: url("/fonts/withered.ttf");
-}
-
 body {
     font-size: 12px;
     font-family: "Quinque";
@@ -28,21 +23,20 @@ body {
     background-color: #813151;
 }
 
-/* Remember these for every theme ;) */
-
-html[data-theme="dark"] {
+:root {
     --bg-primary: #243642;
     --fg-primary: #e2f1e7;
     --fg-secondary: #eee;
-    --link-primary: #66b3ff;
+    --link-primary: #e2f1e7;
     --link-hover: #4d8ac3;
-    --table-text: #333;
-    --table-group1: #e2f1e7;
-    --table-group2: #bbb;
+    --table-text: #e2f1e7;
+    --table-group1: #387478;
+    --table-group2: #38747890;
     --echlevel-color: var(--link-primary);
-    --echlevel-bg: white;
+    --echlevel-bg: #629584;
     --echlevel-shadow: #888;
-    --enchantment-results: #0e754d;
+    --enchantment-results: #387478;
+    --enchantment-buttons: #243642;
     --progress-color: #f1a32f;
     --error: #f90601;
     --phone-warn: #e7cc03;
@@ -76,12 +70,13 @@ body .logo {
     appearance: none;
     font-size: 14px;
     font-family: "Quinque";
-    border: 1px solid var(--table-group2);
     background-color: var(--table-group1);
     color: var(--table-text);
     background-size: 12px 12px;
     padding: 1rem;
+    border: none;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 .inner {
@@ -100,15 +95,35 @@ a:hover {
 }
 
 #enchants {
-    width: 400px;
+    width: 32rem;
+}
+
+.tableContainer {
+    height: 20rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 32rem;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.tableContainer::-webkit-scrollbar {
+    width: 0rem;
 }
 
 #enchants table {
-    border-spacing: 0;
+    border-spacing: 0rem;
+    border-radius: 3rem;
+    height: 20rem;
+    overflow-y: scroll;
+}
+
+#enchants table button {
+    border-radius: 0.5rem;
 }
 
 #enchants td {
-    padding: 0.5em;
+    padding: 1rem;
 }
 
 #enchants tr.group1 td {
@@ -126,18 +141,18 @@ a:hover {
 }
 
 #enchants button {
+    border: none;
+    font-family: "Quinque";
     background-color: var(--echlevel-bg);
     padding: 10px;
-    vertical-align: top;
-    box-shadow: 2px 1px 2px var(--echlevel-shadow);
     color: var(--echlevel-color);
-    margin: 2px 0px 2px 0px;
+    border-radius: 0.75rem;
+    cursor: pointer;
 }
 
 #enchants button.on {
-    box-shadow: 0 0 0 var(--echlevel-shadow);
-    color: var(--echlevel-color);
-    background-color: var(--enchantment-results);
+    color: var(--echlevel-bg);
+    background-color: var(--fg-primary);
 }
 
 #calculate {
@@ -148,12 +163,35 @@ a:hover {
 #left {
     width: 400px;
     float: left;
-    margin-right: 50px;
+    margin-right: 10rem;
+    margin-top: 3rem;
+}
+
+#overrides {
+    background-color: #387478;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+
+#overrides label {
+    cursor: pointer;
 }
 
 #right {
-    width: 550px;
+    margin-top: 3rem;
+    width: 25rem;
     float: left;
+}
+
+#mode_selection {
+    background-color: #387478;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+#mode_selection label {
+    cursor: pointer;
 }
 
 #progress {
@@ -183,8 +221,17 @@ a:hover {
 
 #solution {
     background-color: var(--solution);
-    padding: 20px;
-    margin-top: 20px;
+    padding: 1rem;
+    margin-top: 1rem;
+    height: 22rem;
+    border-radius: 1rem;
+    line-height: 1.5rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#solution::-webkit-scrollbar {
+    width: 0rem;
 }
 
 #solution h2 {
@@ -192,7 +239,8 @@ a:hover {
 }
 
 #steps li {
-    margin-bottom: 0.75em;
+    margin: 1rem;
+    font-size: 0.6rem;
 }
 
 .icon {
@@ -247,15 +295,17 @@ a:hover {
 .selectLanguage {
     appearance: none;
     font-size: 14px;
+    font-family: "Quinque";
+    width: auto;
     height: 3rem;
-    width: 3rem;
     background-color: var(--table-group1);
     color: var(--table-text);
-    background-image: url("images/language.svg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1.5rem;
+    border: none;
     border-radius: 1rem;
+    padding: 1rem;
     cursor: pointer;
 }
 
