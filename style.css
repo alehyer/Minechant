@@ -28,7 +28,7 @@ body {
     --fg-primary: #e2f1e7;
     --fg-secondary: #eee;
     --link-primary: #e2f1e7;
-    --link-hover: #4d8ac3;
+    --link-hover: #387478;
     --table-text: #e2f1e7;
     --table-group1: #387478;
     --table-group2: #38747890;
@@ -88,6 +88,7 @@ body .logo {
 
 a {
     color: var(--link-primary);
+    text-decoration: none;
 }
 
 a:hover {
@@ -115,6 +116,7 @@ a:hover {
     border-spacing: 0rem;
     border-radius: 3rem;
     height: 20rem;
+    width: fit-content;
     overflow-y: scroll;
 }
 
@@ -288,8 +290,9 @@ a:hover {
 /* Top container */
 .top-container {
     float: right;
-    height: 3rem;
     display: flex;
+    margin-top: 2rem;
+    margin-right: 4rem;
 }
 
 .selectLanguage {
