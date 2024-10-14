@@ -1,7 +1,6 @@
 const ENCHANTMENT_LIMIT_INCLUSIVE = 10;
 
 let worker;
-let start_time;
 let total_steps;
 let total_tries;
 let languageJson;
@@ -278,23 +277,6 @@ function buildEnchantmentSelection() {
     });
 }
 
-function displayTime(time_milliseconds) {
-    let time_text;
-
-    if (time_milliseconds < 1) {
-        const time_microseconds = Math.round(time_milliseconds * 1000);
-        time_text = Math.round(time_microseconds) + languageJson.microseconds;
-    } else if (time_milliseconds < 1000) {
-        const time_round = Math.round(time_milliseconds);
-        time_text = pluralize(time_round, "millisecond");
-    } else {
-        const time_seconds = Math.round(time_milliseconds / 1000);
-        time_text = pluralize(time_seconds, "second");
-    }
-
-    return time_text;
-}
-
 function displayLevelsText(levels) {
     let level_text;
     level_text = pluralize(levels, "level");
@@ -458,13 +440,6 @@ function findEnchantments(item) {
     return enchants;
 }
 
-function updateTime(time_milliseconds) {
-    const timing_text =
-        languageJson.completed_in + displayTime(time_milliseconds);
-    $("#timings").text(timing_text);
-    $("#timings").show();
-}
-
 function updateCumulativeCost(
     cumulative_levels,
     cumulative_xp,
@@ -491,10 +466,6 @@ function afterFoundOptimalSolution(msg) {
     const instructions = msg.instructions;
     const instructions_count = instructions.length;
     enchants_list = msg.enchants;
-
-    const current_time = performance.now();
-    const elapsed_time_milliseconds = current_time - start_time;
-    updateTime(elapsed_time_milliseconds);
 
     const solution_section = $("#solution");
     const solution_header = $("#solution-header");
@@ -717,7 +688,6 @@ function startCalculating(item_namespace, enchantment_foundation, mode) {
 
     total_steps = enchantment_foundation.length;
     total_tries = 0;
-    start_time = performance.now();
 
     $("#solution").hide();
     $("#error").hide();
@@ -812,15 +782,6 @@ function changeLanguageByJson(languageJson) {
         }
         map[languageJson.enchants[i]] = i;
     }
-
-    const h1Element = document.getElementsByTagName("h1")[0];
-    h1Element.textContent = languageJson.h1_title;
-
-    /* paragraphs */
-    const paragraphs = document.getElementsByTagName("p");
-    paragraphs[1].innerHTML = languageJson.paragraph_1;
-    paragraphs[2].innerHTML = languageJson.paragraph_2;
-    paragraphs[3].innerHTML = languageJson.paragraph_3;
 
     /* selection */
     const options = document

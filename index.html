@@ -5,22 +5,22 @@
         <meta charset="utf-8" />
         <script
             src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
             crossorigin="anonymous"
         ></script>
         <script src="data.js?10"></script>
         <script src="script.js?15"></script>
         <link rel="stylesheet" type="text/css" href="style.css?3" />
-        <script
-            src="https://unpkg.com/@hungrybluedev/theme-switcher@latest/dist/switch.js"
-            type="module"
-            defer
-        ></script>
     </head>
     <body>
         <div class="inner">
             <div class="top-container">
-                by&nbsp;
-                <a href="http://github.com/alehyer" target="_blank">@alehyer</a>
+                <p>
+                    <label for="language"></label>
+                    <select id="language" class="selectLanguage">
+                        <option value="">Language</option>
+                    </select>
+                </p>
             </div>
             <div class="logo">Minechant</div>
 
@@ -100,19 +100,20 @@
                 </div>
 
                 <div id="solution" style="display: none">
-                    <h2 id="solution-header">Optimal solution found!</h2>
-
                     <p>
                         <b id="total-cost-label">Total cost:</b>
                         <span id="level-cost">####</span>
                     </p>
                     <h3>Steps</h3>
                     <ol id="steps"></ol>
-                    <p id="xp-range-note" style="display: none">
-                        Note: The two XP values shown are the difference between
-                        saving up for all levels/XP in one go, versus gaining
-                        levels/XP between each enchantment step.
-                    </p>
+                    <small>
+                        <p id="xp-range-note" style="display: none">
+                            Note: The two XP values shown are the difference
+                            between saving up for all levels/XP in one go,
+                            versus gaining levels/XP between each enchantment
+                            step.
+                        </p>
+                    </small>
                 </div>
 
                 <div id="error" style="display: none">

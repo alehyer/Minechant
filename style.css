@@ -11,18 +11,6 @@ body {
     background-color: #e3e4eb;
 }
 
-/* Theme styles */
-
-#theme-switcher-form div:nth-child(1) label {
-    background-color: #eee;
-}
-#theme-switcher-form div:nth-child(2) label {
-    background-color: #353535;
-}
-#theme-switcher-form div:nth-child(3) label {
-    background-color: #813151;
-}
-
 :root {
     --bg-primary: #243642;
     --fg-primary: #e2f1e7;
@@ -69,6 +57,7 @@ body .logo {
 .selectItem {
     appearance: none;
     font-size: 14px;
+    max-width: 32rem;
     font-family: "Quinque";
     background-color: var(--table-group1);
     color: var(--table-text);
@@ -77,6 +66,7 @@ body .logo {
     border: none;
     border-radius: 1rem;
     cursor: pointer;
+    text-overflow: ellipsis;
 }
 
 .inner {
@@ -245,6 +235,10 @@ a:hover {
     font-size: 0.6rem;
 }
 
+#xp-range-note {
+    font-size: 0.4rem;
+}
+
 .icon {
     display: inline-block;
     width: 16px;
@@ -291,8 +285,7 @@ a:hover {
 .top-container {
     float: right;
     display: flex;
-    margin-top: 2rem;
-    margin-right: 4rem;
+    margin-right: 3rem;
 }
 
 .selectLanguage {
@@ -303,45 +296,10 @@ a:hover {
     height: 3rem;
     background-color: var(--table-group1);
     color: var(--table-text);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1.5rem;
     border: none;
     border-radius: 1rem;
     padding: 1rem;
     cursor: pointer;
-}
-
-#theme-switcher-form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90px; /* Adjust the width as needed */
-    margin: auto; /* Center form */
-}
-
-#theme-switcher-form div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#theme-switcher-form input[type="radio"] {
-    display: none;
-    outline: 1px solid var(--fg-secondary);
-}
-
-#theme-switcher-form label {
-    width: 25px;
-    height: 25px;
-    background: #ccc; /* Default background no one's ever going to see */
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#theme-switcher-form input[type="radio"]:checked + label {
-    outline: 2px solid var(--fg-primary);
 }
 
 @media only screen and (max-width: 422px) {
@@ -373,8 +331,4 @@ a:hover {
         margin-top: 13px;
         margin-left: 12px;
     }
-
-    /*#theme-switcher-form {
-    width: 90px;
-  }*/
 } /* bigger screens */
