@@ -1,0 +1,343 @@
+/* General */
+
+@font-face {
+    font-family: "Quinque";
+    src: url("fonts/QuinqueFive.woff2") format("woff2"),
+        url("fonts/QuinqueFive.woff") format("woff");
+}
+
+/* Body */
+
+body {
+    font-size: 0.5rem;
+    font-family: "Quinque";
+    position: relative;
+    background-color: #e3e4eb;
+    background-color: var(--bg-primary);
+    color: var(--fg-primary);
+    max-width: 100%;
+    overflow-y: scroll;
+    margin-bottom: 0;
+}
+
+body h1,
+body h2 {
+    color: var(--fg-primary);
+}
+
+.inner {
+    margin-top: 0;
+    max-width: 100%;
+    overflow: auto;
+}
+
+:root {
+    --bg-primary: #243642;
+    --fg-primary: #e2f1e7;
+    --fg-secondary: #eee;
+    --link-primary: #e2f1e7;
+    --link-hover: #387478;
+    --table-text: #e2f1e7;
+    --table-group1: #387478;
+    --table-group2: #38747890;
+    --echlevel-color: var(--link-primary);
+    --echlevel-bg: #629584;
+    --echlevel-shadow: #888;
+    --enchantment-results: #387478;
+    --enchantment-buttons: #243642;
+    --progress-color: #f1a32f;
+    --error: #f90601;
+    --phone-warn: #e7cc03;
+    --solution: #03ad5f;
+}
+
+/* Top container */
+
+.top-container {
+    display: flex;
+    max-width: 100%;
+    font-size: 0.5rem;
+    align-items: center;
+    margin: 1rem;
+}
+
+.logo {
+    font-family: "Quinque";
+    font-size: 1rem;
+}
+
+.selectLanguage {
+    appearance: none;
+    font-size: 0.5rem;
+    width: 4rem;
+    font-family: "Quinque";
+    height: 2rem;
+    background-color: var(--table-group1);
+    color: var(--table-text);
+    border: none;
+    text-align: center;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+    text-overflow: ellipsis;
+}
+
+/* Left */
+
+.selectItem:focus,
+.selectLanguage:focus {
+    outline: none;
+}
+
+.selectItem {
+    appearance: none;
+    font-size: 0.5rem;
+    max-width: 100%;
+    font-family: "Quinque";
+    background-color: var(--table-group1);
+    color: var(--table-text);
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-overflow: ellipsis;
+}
+
+a {
+    color: var(--link-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+#enchants {
+    width: auto;
+}
+
+.tableContainer {
+    height: 20rem;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    width: auto;
+    max-width: 100%;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.tableContainer::-webkit-scrollbar {
+    width: 0rem;
+    height: 0rem;
+}
+
+#enchants table {
+    border-spacing: 0rem;
+    border-radius: 3rem;
+    width: fit-content;
+}
+
+#enchants table button {
+    border-radius: 0.5rem;
+}
+
+#enchants td {
+    padding: 1rem;
+    font-size: 0.5rem;
+    line-height: 1rem;
+}
+
+#enchants tr.group1 td {
+    color: var(--table-text);
+    background-color: var(--table-group1);
+}
+
+#enchants tr.group2 td {
+    color: var(--table-text);
+    background-color: var(--table-group2);
+}
+
+#enchants button {
+    border: none;
+    font-family: "Quinque";
+    font-size: 0.5rem;
+    background-color: var(--echlevel-bg);
+    padding: 10px;
+    color: var(--echlevel-color);
+    border-radius: 0.75rem;
+    cursor: pointer;
+}
+
+#enchants button.on {
+    color: var(--echlevel-bg);
+    background-color: var(--fg-primary);
+}
+
+#calculate {
+    padding: 8px;
+    margin-top: 1rem;
+}
+
+#left {
+    width: auto;
+    float: none;
+    margin-right: 0;
+    margin-top: 0rem;
+}
+
+#overrides {
+    background-color: #387478;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+
+#overrides label {
+    cursor: pointer;
+}
+
+#right {
+    width: auto;
+    float: none;
+    margin-top: 1rem;
+}
+
+#mode_selection {
+    background-color: #387478;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: auto;
+    max-width: 100%;
+}
+
+#mode_selection label {
+    cursor: pointer;
+}
+
+#progress {
+    margin-top: 40px;
+    line-height: 20px;
+    background-color: var(--progress-color);
+    padding: 20px;
+}
+
+#progress img {
+    vertical-align: middle;
+}
+
+#error {
+    margin-top: 40px;
+    line-height: 20px;
+    background-color: var(--error);
+    padding: 20px;
+}
+
+#phone-warn {
+    margin-top: 40px;
+    line-height: 20px;
+    background-color: var(--phone-warn);
+    padding: 20px;
+}
+
+#solution {
+    background-color: var(--solution);
+    padding: 1rem;
+    margin-top: 1rem;
+    height: 21.5rem;
+    border-radius: 1rem;
+    line-height: 1.5rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-bottom: 1rem;
+}
+
+#solution::-webkit-scrollbar {
+    width: 0rem;
+}
+
+#solution h2 {
+    margin-block-start: 0;
+}
+
+#steps li {
+    margin: 1rem;
+    font-size: 0.6rem;
+}
+
+.icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+#xp-range-note {
+    margin-top: 2em;
+    font-size: 0.6rem;
+}
+
+@media only screen and (min-width: 550px) {
+    body {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 0.6rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .inner {
+        width: 75rem;
+        justify-content: center;
+        margin-top: 0;
+    }
+
+    .top-container {
+        justify-content: space-between;
+    }
+
+    .selectLanguage {
+        float: right;
+        margin-right: 2rem;
+    }
+
+    #left {
+        width: 32rem;
+        float: left;
+        margin-right: 10rem;
+        margin-top: 1rem;
+    }
+
+    #right {
+        margin-top: 1rem;
+        width: 32rem;
+        float: left;
+    }
+
+    #enchants {
+        width: 32rem;
+    }
+
+    #enchants td {
+        padding: 1rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #enchants button {
+        font-size: 1rem;
+    }
+
+    .selectItem {
+        font-size: 14px;
+        width: 32rem;
+    }
+
+    .tableContainer {
+        width: 32rem;
+    }
+}
+
+@media only screen and (min-width: 1720px) {
+}
