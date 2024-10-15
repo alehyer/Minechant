@@ -56,7 +56,6 @@ body h2 {
     max-width: 100%;
     font-size: 0.5rem;
     align-items: center;
-    justify-content: space-between;
     margin: 1rem;
 }
 
@@ -68,14 +67,17 @@ body h2 {
 .selectLanguage {
     appearance: none;
     font-size: 0.5rem;
+    width: 3rem;
     font-family: "Quinque";
-    height: 1rem;
+    height: 3rem;
     background-color: var(--table-group1);
     color: var(--table-text);
     border: none;
+    text-align: center;
     border-radius: 1rem;
-    padding: 1rem;
     cursor: pointer;
+    margin-left: 1rem;
+    text-overflow: ellipsis;
 }
 
 /* Left */
@@ -117,7 +119,7 @@ a:hover {
     overflow-x: hidden;
     overflow-y: scroll;
     width: auto;
-    max-width: 70%;
+    max-width: 100%;
     margin-top: 1rem;
     border-radius: 1rem;
 }
@@ -139,6 +141,7 @@ a:hover {
 #enchants td {
     padding: 1rem;
     font-size: 0.5rem;
+    line-height: 1rem;
 }
 
 #enchants tr.group1 td {
@@ -169,7 +172,7 @@ a:hover {
 
 #calculate {
     padding: 8px;
-    font-size: 120%;
+    margin-top: 1rem;
 }
 
 #left {
@@ -193,6 +196,7 @@ a:hover {
 #right {
     width: auto;
     float: none;
+    margin-top: 1rem;
 }
 
 #mode_selection {
