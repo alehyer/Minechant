@@ -1,14 +1,32 @@
+/* General */
+
 @font-face {
     font-family: "Quinque";
     src: url("fonts/QuinqueFive.woff2") format("woff2"),
         url("fonts/QuinqueFive.woff") format("woff");
 }
 
+/* Body */
+
 body {
-    font-size: 12px;
+    font-size: 0.5rem;
     font-family: "Quinque";
     position: relative;
     background-color: #e3e4eb;
+    background-color: var(--bg-primary);
+    color: var(--fg-primary);
+    max-width: 100%;
+}
+
+body h1,
+body h2 {
+    color: var(--fg-primary);
+}
+
+.inner {
+    margin-top: 0;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 :root {
@@ -31,49 +49,54 @@ body {
     --solution: #03ad5f;
 }
 
-/* TODO: fix enchantment results variable name, misnomer */
+/* Top container */
+
+.top-container {
+    display: flex;
+    max-width: 100%;
+    font-size: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.logo {
+    font-family: "Quinque";
+    font-size: 1rem;
+}
+
+.selectLanguage {
+    appearance: none;
+    font-size: 0.5rem;
+    font-family: "Quinque";
+    height: 1rem;
+    background-color: var(--table-group1);
+    color: var(--table-text);
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+/* Left */
 
 .selectItem:focus,
 .selectLanguage:focus {
     outline: none;
 }
 
-body {
-    background-color: var(--bg-primary);
-    color: var(--fg-primary);
-}
-
-body h1,
-body h2 {
-    color: var(--fg-primary);
-}
-
-body .logo {
-    margin-top: 1rem;
-    font-family: "Quinque";
-    font-size: 2.5rem;
-}
-
 .selectItem {
     appearance: none;
-    font-size: 14px;
-    max-width: 32rem;
+    font-size: 0.5rem;
+    max-width: 100%;
     font-family: "Quinque";
     background-color: var(--table-group1);
     color: var(--table-text);
-    background-size: 12px 12px;
     padding: 1rem;
     border: none;
     border-radius: 1rem;
     cursor: pointer;
     text-overflow: ellipsis;
-}
-
-.inner {
-    margin: 30px auto;
-    width: 1000px;
-    padding-bottom: 30px;
-    overflow: auto;
 }
 
 a {
@@ -86,14 +109,15 @@ a:hover {
 }
 
 #enchants {
-    width: 32rem;
+    width: auto;
 }
 
 .tableContainer {
     height: 20rem;
     overflow-x: hidden;
     overflow-y: scroll;
-    width: 32rem;
+    width: auto;
+    max-width: 70%;
     margin-top: 1rem;
     border-radius: 1rem;
 }
@@ -105,9 +129,7 @@ a:hover {
 #enchants table {
     border-spacing: 0rem;
     border-radius: 3rem;
-    height: 20rem;
     width: fit-content;
-    overflow-y: scroll;
 }
 
 #enchants table button {
@@ -116,6 +138,7 @@ a:hover {
 
 #enchants td {
     padding: 1rem;
+    font-size: 0.5rem;
 }
 
 #enchants tr.group1 td {
@@ -128,13 +151,10 @@ a:hover {
     background-color: var(--table-group2);
 }
 
-#enchants td i {
-    font-size: 12px;
-}
-
 #enchants button {
     border: none;
     font-family: "Quinque";
+    font-size: 0.5rem;
     background-color: var(--echlevel-bg);
     padding: 10px;
     color: var(--echlevel-color);
@@ -153,10 +173,10 @@ a:hover {
 }
 
 #left {
-    width: 400px;
-    float: left;
-    margin-right: 10rem;
-    margin-top: 3rem;
+    width: auto;
+    float: none;
+    margin-right: 0;
+    margin-top: 0rem;
 }
 
 #overrides {
@@ -171,15 +191,16 @@ a:hover {
 }
 
 #right {
-    margin-top: 3rem;
-    width: 25rem;
-    float: left;
+    width: auto;
+    float: none;
 }
 
 #mode_selection {
     background-color: #387478;
     padding: 1rem;
     border-radius: 1rem;
+    width: auto;
+    max-width: 100%;
 }
 
 #mode_selection label {
@@ -241,34 +262,50 @@ a:hover {
     height: 16px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (min-width: 600px) {
     body {
         padding: 10px;
     }
 
+    .logo {
+        font-size: 2.5rem;
+    }
+
     .inner {
-        width: auto;
-        max-width: 100%;
+        width: 62.5rem;
         margin-top: 0;
     }
 
-    h1 {
-        font-size: 24px;
+    .top-container {
+        justify-content: space-between;
+    }
+
+    .selectLanguage {
+        float: right;
     }
 
     #left {
-        width: auto;
-        float: none;
-        margin-right: 0;
+        width: 400px;
+        float: left;
+        margin-right: 10rem;
     }
 
     #right {
-        width: auto;
-        float: none;
+        margin-top: 3rem;
+        width: 25rem;
+        float: left;
     }
 
     #enchants {
-        width: auto;
+        width: 32rem;
+    }
+
+    .selectItem {
+        font-size: 14px;
+    }
+
+    .tableContainer {
+        width: 32rem;
     }
 }
 
@@ -276,55 +313,3 @@ a:hover {
     margin-top: 2em;
     font-size: 0.6rem;
 }
-
-/* Top container */
-.top-container {
-    float: right;
-    display: flex;
-    margin-right: 3rem;
-}
-
-.selectLanguage {
-    appearance: none;
-    font-size: 14px;
-    font-family: "Quinque";
-    width: auto;
-    height: 3rem;
-    background-color: var(--table-group1);
-    color: var(--table-text);
-    border: none;
-    border-radius: 1rem;
-    padding: 1rem;
-    cursor: pointer;
-}
-
-@media only screen and (max-width: 422px) {
-    .footer {
-        text-align: center;
-    }
-
-    .footer * {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .dark-mode-toggle-container {
-        margin-top: 12px;
-    }
-} /* smol screens */
-
-@media only screen and (min-width: 423px) {
-    .footer {
-        text-align: right;
-    }
-
-    .footer * {
-        display: inline-block;
-    }
-
-    .dark-mode-toggle-container {
-        float: left;
-        margin-top: 13px;
-        margin-left: 12px;
-    }
-} /* bigger screens */
