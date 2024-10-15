@@ -9,6 +9,26 @@ body {
     font-family: "Quinque";
     position: relative;
     background-color: #e3e4eb;
+<<<<<<< Updated upstream
+=======
+    background-color: var(--bg-primary);
+    color: var(--fg-primary);
+    max-width: 100%;
+    overflow-y: scroll;
+    margin-bottom: 0;
+}
+
+body h1,
+body h2 {
+    color: var(--fg-primary);
+}
+
+.inner {
+    margin-top: 0;
+    max-width: 100%;
+    overflow: auto;
+    margin-bottom: 0;
+>>>>>>> Stashed changes
 }
 
 :root {
@@ -215,11 +235,12 @@ a:hover {
     background-color: var(--solution);
     padding: 1rem;
     margin-top: 1rem;
-    height: 22rem;
+    height: 21.5rem;
     border-radius: 1rem;
     line-height: 1.5rem;
     overflow-y: scroll;
     overflow-x: hidden;
+    margin-bottom: 1rem;
 }
 
 #solution::-webkit-scrollbar {
@@ -243,12 +264,28 @@ a:hover {
 
 @media only screen and (max-width: 1000px) {
     body {
+<<<<<<< Updated upstream
         padding: 10px;
     }
 
     .inner {
         width: auto;
         max-width: 100%;
+=======
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 0.6rem;
+    }
+
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .inner {
+        width: 75rem;
+        justify-content: center;
+>>>>>>> Stashed changes
         margin-top: 0;
     }
 
@@ -257,6 +294,7 @@ a:hover {
     }
 
     #left {
+<<<<<<< Updated upstream
         width: auto;
         float: none;
         margin-right: 0;
@@ -265,6 +303,18 @@ a:hover {
     #right {
         width: auto;
         float: none;
+=======
+        width: 32rem;
+        float: left;
+        margin-right: 10rem;
+        margin-top: 1rem;
+    }
+
+    #right {
+        margin-top: 1rem;
+        width: 32rem;
+        float: left;
+>>>>>>> Stashed changes
     }
 
     #enchants {
@@ -277,6 +327,7 @@ a:hover {
     font-size: 0.6rem;
 }
 
+<<<<<<< Updated upstream
 /* Top container */
 .top-container {
     float: right;
@@ -328,3 +379,13 @@ a:hover {
         margin-left: 12px;
     }
 } /* bigger screens */
+=======
+@media only screen and (min-width: 1720px) {
+    #left {
+        margin-top: 3rem;
+    }
+    #right {
+        margin-top: 3rem;
+    }
+}
+>>>>>>> Stashed changes
