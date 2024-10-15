@@ -16,6 +16,7 @@ body {
     background-color: var(--bg-primary);
     color: var(--fg-primary);
     max-width: 100%;
+    overflow-y: scroll;
 }
 
 body h1,
@@ -26,7 +27,7 @@ body h2 {
 .inner {
     margin-top: 0;
     max-width: 100%;
-    overflow: hidden;
+    overflow: auto;
 }
 
 :root {
@@ -67,7 +68,7 @@ body h2 {
 .selectLanguage {
     appearance: none;
     font-size: 0.5rem;
-    width: 3rem;
+    width: 4rem;
     font-family: "Quinque";
     height: 2rem;
     background-color: var(--table-group1);
@@ -267,9 +268,13 @@ a:hover {
     height: 16px;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 550px) {
     body {
         padding: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 0.6rem;
     }
 
     .logo {
@@ -277,7 +282,8 @@ a:hover {
     }
 
     .inner {
-        width: 62.5rem;
+        width: 70rem;
+        justify-content: center;
         margin-top: 0;
     }
 
@@ -287,12 +293,14 @@ a:hover {
 
     .selectLanguage {
         float: right;
+        margin-right: 2rem;
     }
 
     #left {
-        width: 400px;
+        width: 32rem;
         float: left;
         margin-right: 10rem;
+        margin-top: 3rem;
     }
 
     #right {
@@ -305,8 +313,19 @@ a:hover {
         width: 32rem;
     }
 
+    #enchants td {
+        padding: 1rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #enchants button {
+        font-size: 1rem;
+    }
+
     .selectItem {
         font-size: 14px;
+        width: 32rem;
     }
 
     .tableContainer {
