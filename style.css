@@ -17,6 +17,7 @@ body {
     color: var(--fg-primary);
     max-width: 100%;
     overflow-y: scroll;
+    margin-bottom: 0;
 }
 
 body h1,
@@ -242,11 +243,12 @@ a:hover {
     background-color: var(--solution);
     padding: 1rem;
     margin-top: 1rem;
-    height: 22rem;
+    height: 21.5rem;
     border-radius: 1rem;
     line-height: 1.5rem;
     overflow-y: scroll;
     overflow-x: hidden;
+    margin-bottom: 1rem;
 }
 
 #solution::-webkit-scrollbar {
@@ -268,9 +270,13 @@ a:hover {
     height: 16px;
 }
 
+#xp-range-note {
+    margin-top: 2em;
+    font-size: 0.6rem;
+}
+
 @media only screen and (min-width: 550px) {
     body {
-        padding: 10px;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -282,7 +288,7 @@ a:hover {
     }
 
     .inner {
-        width: 70rem;
+        width: 75rem;
         justify-content: center;
         margin-top: 0;
     }
@@ -300,12 +306,12 @@ a:hover {
         width: 32rem;
         float: left;
         margin-right: 10rem;
-        margin-top: 3rem;
+        margin-top: 1rem;
     }
 
     #right {
-        margin-top: 3rem;
-        width: 25rem;
+        margin-top: 1rem;
+        width: 32rem;
         float: left;
     }
 
@@ -333,7 +339,5 @@ a:hover {
     }
 }
 
-#xp-range-note {
-    margin-top: 2em;
-    font-size: 0.6rem;
+@media only screen and (min-width: 1720px) {
 }
