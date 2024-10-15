@@ -120,7 +120,7 @@ a:hover {
     height: 20rem;
     overflow-x: scroll;
     overflow-y: scroll;
-    width: auto;
+    width: fit-content;
     max-width: 100%;
     margin-top: 1rem;
     border-radius: 1rem;
@@ -147,6 +147,14 @@ a:hover {
     line-height: 1rem;
 }
 
+#enchants tr:last-child td:first-child {
+    border-bottom-left-radius: 1rem;
+}
+
+#enchants tr:last-child td:last-child {
+    border-bottom-right-radius: 1rem;
+}
+
 #enchants tr.group1 td {
     color: var(--table-text);
     background-color: var(--table-group1);
@@ -171,6 +179,10 @@ a:hover {
 #enchants button.on {
     color: var(--echlevel-bg);
     background-color: var(--fg-primary);
+}
+
+.tableNote {
+    margin-top: 1rem;
 }
 
 #calculate {
@@ -215,10 +227,10 @@ a:hover {
 }
 
 #progress {
-    margin-top: 40px;
-    line-height: 20px;
+    margin-top: 1rem;
     background-color: var(--progress-color);
-    padding: 20px;
+    border-radius: 1rem;
+    padding: 1rem;
 }
 
 #progress img {
@@ -319,8 +331,12 @@ a:hover {
         width: 32rem;
     }
 
+    #enchants td:first-child {
+        padding-left: 1rem;
+    }
     #enchants td {
-        padding: 1rem;
+        padding-left: 0rem;
+        padding-right: 1rem;
         font-size: 1rem;
         line-height: 1.5rem;
     }
