@@ -69,7 +69,7 @@ body h2 {
     font-size: 0.5rem;
     width: 3rem;
     font-family: "Quinque";
-    height: 3rem;
+    height: 2rem;
     background-color: var(--table-group1);
     color: var(--table-text);
     border: none;
@@ -116,7 +116,7 @@ a:hover {
 
 .tableContainer {
     height: 20rem;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: scroll;
     width: auto;
     max-width: 100%;
@@ -126,6 +126,7 @@ a:hover {
 
 .tableContainer::-webkit-scrollbar {
     width: 0rem;
+    height: 0rem;
 }
 
 #enchants table {
